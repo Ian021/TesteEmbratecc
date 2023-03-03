@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.img-big {
+  max-height: 600px;
+  width: auto;
+}
+
+.img-small {
+  max-height: 92px;
+  width: auto;
+}
+
+@media (max-width: 800px)
+{
+  .img-big {
+    max-height: 320px;
+    width: auto;
+  }
+  .img-small {
+    max-height: 52px;
+    width: auto;
+  }
+}

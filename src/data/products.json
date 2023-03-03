@@ -4,6 +4,13 @@
         "name": "Mouse Logitech 170",
         "price": "65.90",
         "inventory": "37",
-        "photos": []
+        "photos": [
+            "mouseAzul",
+            "mousePrata",
+            "mouseVermelho",
+            "mousePreto",
+            "mousePerfil",
+            "mouseBottom"
+        ]
     }
 }

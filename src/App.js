@@ -1,11 +1,11 @@
 import NavigationBar from './components/NavigationBar'
-import Product from './pages/Product'
+import ProductPage from './pages/ProductPage'
 
 function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <Product />
+      <ProductPage />
     </div>
   )
 }
