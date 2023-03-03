@@ -26,6 +26,7 @@ export default function ProductPage() {
           flex: 2,
           display: 'flex',
           flexDirection: small ? 'column-reverse' : 'row',
+          alignItems: 'center',
         }}
       >
         {!small && (

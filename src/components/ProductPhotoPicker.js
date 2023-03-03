@@ -7,13 +7,11 @@ export default function ProductPhotoPicker({
   setProductPhoto,
   photos,
 }) {
-  const small = useMediaQuery('(max-width: 800px)')
-
   return (
     <Box
       sx={{
         display: 'flex',
-        flexDirection: small ? 'row' : 'column',
+        flexDirection: 'column',
       }}
     >
       {photos.map((photo) => {
@@ -22,8 +20,8 @@ export default function ProductPhotoPicker({
           <Button
             key={photo}
             sx={{
-              height: small ? '52px' : '92px',
-              width: small ? '52px' : '92px',
+              height: '92px',
+              width: '92px',
               overflow: 'hidden',
               display: 'flex',
               alignItems: 'center',

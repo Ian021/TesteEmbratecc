@@ -28,8 +28,4 @@ code {
     max-height: 320px;
     width: auto;
   }
-  .img-small {
-    max-height: 52px;
-    width: auto;
-  }
 }

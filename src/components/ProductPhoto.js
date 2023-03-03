@@ -14,6 +14,7 @@ export default function ProductPhoto({
   setProductPhoto,
 }) {
   const small = useMediaQuery('(max-width: 800px)')
+  const verySmall = useMediaQuery('(max-width: 400px)')
 
   function handleNext() {
     const currentIndex = photos.indexOf(productPhoto)
@@ -30,10 +31,17 @@ export default function ProductPhoto({
   }
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: small ? '320px' : '100%',
+      }}
+    >
       <IconButton
         onClick={handlePrevious}
-        sx={{ ...(small && { position: 'absolute', left: 0 }) }}
+        sx={{ ...(verySmall && { position: 'absolute', left: 0 }) }}
       >
         <ArrowBackIos />
       </IconButton>
@@ -51,7 +59,7 @@ export default function ProductPhoto({
       </Box>
       <IconButton
         onClick={handleNext}
-        sx={{ ...(small && { position: 'absolute', right: 0 }) }}
+        sx={{ ...(verySmall && { position: 'absolute', right: 0 }) }}
       >
         <ArrowForwardIos />
       </IconButton>
