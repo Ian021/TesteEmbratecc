@@ -8,6 +8,7 @@ import products from '../data/products.json'
 
 export default function ProductPage() {
   const small = useMediaQuery('(max-width: 800px)')
+  const big = useMediaQuery('(max-width: 1200px)')
   const photos = products.mouse.photos
 
   const [productPhoto, setProductPhoto] = useState(photos[0])
@@ -17,8 +18,9 @@ export default function ProductPage() {
       sx={{
         display: 'flex',
         paddingTop: '40px',
-        flexDirection: small ? 'column' : 'row',
+        flexDirection: big ? 'column' : 'row',
         paddingX: small ? 0 : undefined,
+        alignItems: 'center',
       }}
     >
       <Box
@@ -42,8 +44,8 @@ export default function ProductPage() {
           setProductPhoto={setProductPhoto}
         />
       </Box>
-      <Box sx={{ flex: 1, bgcolor: 'lightblue' }}>
-        <ProductMenu />
+      <Box sx={{ flex: 1, maxWidth: '600px', marginTop: 5 }}>
+        <ProductMenu product={products.mouse} />
       </Box>
     </Container>
   )
