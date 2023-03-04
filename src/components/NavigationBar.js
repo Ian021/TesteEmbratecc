@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   IconButton,
+  Link,
   Toolbar,
   Typography,
 } from '@mui/material'
@@ -12,9 +13,19 @@ import React from 'react'
 export default function NavigationBar() {
   return (
     <AppBar position="static">
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          bgcolor: 'black',
+        }}
+      >
         <Button color="inherit">
-          <Typography variant="h6" sx={{ textTransform: 'none' }}>
+          <img src={'/logo192.png'} alt="logo" height="50px" />
+          <Typography
+            variant="h6"
+            sx={{ textTransform: 'none', fontWeight: 'bold' }}
+          >
             EvoMouse
           </Typography>
         </Button>
@@ -33,14 +44,16 @@ export default function NavigationBar() {
             fulano
           </Typography>
 
-          <IconButton
-            size="large"
-            edge="start"
-            sx={{ marginLeft: 1 }}
-            color="inherit"
-          >
-            <GitHub />
-          </IconButton>
+          <Link href="https://github.com/Ian021/TesteEmbratecc" color="inherit">
+            <IconButton
+              size="large"
+              edge="start"
+              sx={{ marginLeft: 1 }}
+              color="inherit"
+            >
+              <GitHub />
+            </IconButton>
+          </Link>
         </Box>
       </Toolbar>
     </AppBar>

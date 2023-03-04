@@ -5,11 +5,11 @@
         "price": "65.90",
         "inventory": "37",
         "photos": [
-            "mouseAzul",
-            "mousePrata",
-            "mouseVermelho",
             "mousePreto",
             "mousePerfil",
+            "mousePrata",
+            "mouseAzul",
+            "mouseVermelho",
             "mouseBottom"
         ]
     }
