@@ -1,4 +1,4 @@
-import { Box, Button, useMediaQuery } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import React from 'react'
 import { productPhotos } from '../data/productPhotos'
 
@@ -38,7 +38,7 @@ export default function ProductPhotoPicker({
               setProductPhoto(photo)
             }}
           >
-            <img className="img-small" src={productPhotos[photo]} />
+            <img className="img-small" alt={photo} src={productPhotos[photo]} />
           </Button>
         )
       })}

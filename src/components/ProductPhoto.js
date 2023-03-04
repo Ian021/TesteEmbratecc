@@ -1,9 +1,4 @@
-import {
-  ArrowBack,
-  ArrowBackIos,
-  ArrowForwardIos,
-  SwipeLeft,
-} from '@mui/icons-material'
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material'
 import { Box, IconButton, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { productPhotos } from '../data/productPhotos'
@@ -36,7 +31,6 @@ export default function ProductPhoto({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: small ? '320px' : '100%',
       }}
     >
       <IconButton
@@ -55,7 +49,11 @@ export default function ProductPhoto({
           justifyContent: 'center',
         }}
       >
-        <img src={productPhotos[productPhoto]} className="img-big" />
+        <img
+          src={productPhotos[productPhoto]}
+          alt={productPhoto}
+          className="img-big"
+        />
       </Box>
       <IconButton
         onClick={handleNext}
