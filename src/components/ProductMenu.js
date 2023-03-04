@@ -1,9 +1,17 @@
-import { Box, Button, TextField, Typography } from '@mui/material'
+import {
+  Alert,
+  Box,
+  Button,
+  Snackbar,
+  TextField,
+  Typography,
+} from '@mui/material'
 import React, { useState } from 'react'
 
 export default function ProductMenu({ product }) {
   const [qty, setQty] = useState(1)
   const [error, setError] = useState(false)
+  const [open, setOpen] = useState(false)
 
   const totalPrice = Math.round(parseFloat(product.price) * 100 * qty) / 100
 
@@ -24,6 +32,22 @@ export default function ProductMenu({ product }) {
 
   return (
     <Box sx={{ width: '100%', boxShadow: 4, borderRadius: '8px' }}>
+      <Snackbar
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        open={open}
+        onClose={() => setOpen(false)}
+        // message={`Parabéns! Você comprou ${qty} unidades de ${product.name}`}
+        autoHideDuration={3000}
+      >
+        <Alert
+          onClose={() => setOpen(false)}
+          severity="success"
+          sx={{ width: '100%' }}
+        >
+          {`Parabéns! Você comprou ${qty} unidades de ${product.name}`}
+        </Alert>
+      </Snackbar>
+
       <Typography variant="h5" sx={{ padding: '16px' }}>
         {product.name}
       </Typography>
@@ -64,17 +88,13 @@ export default function ProductMenu({ product }) {
         variant="contained"
         color="success"
         sx={{ margin: '16px', width: 'calc(100% - 32px)' }}
+        onClick={() => setOpen(true)}
       >
         Comprar agora
       </Button>
       <Box sx={{ padding: 2 }}>
-        <Typography variant="h6">Informações do Produto</Typography>
-        Principais Recursos Conexão sem Fio e Confiável de 2,4 GHZ - Conexão
-        estável com alcance de até 10 metros. Praticamente sem demoras ou
-        quedas, para você trabalhar com confiança. Testado até 10 metros, o
-        alcance pode variar um pouco dependendo das condições do seu computador
-        e do ambiente. Até 12 Meses de Vida Útil da Bateria - Utilize por até um
-        ano sem precisar trocar a bateria.
+        <Typography variant="h6">Descrição do Produto</Typography>
+        {product.description}
       </Box>
     </Box>
   )
